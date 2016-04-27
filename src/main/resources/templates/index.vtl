@@ -1,20 +1,3 @@
 <h1>CD list!</h1>
 
-#if ($cd-names)
-  <ul>
-    #foreach($cd in $cd-names)
-    <li>$cd.getName()</li>
-    #end
-  </ul>
-#else
-  <p>No CDs!</p>
-#end
-
-<p>Add a new CD:</p>
-
-<form action="/albums" method="post">
-  <label for="cd-name">CD name</label>
-  <input id="cd-name" name="cd-name" type="text">
-
-  <button type="submit" class="btn btn-default">Add CD</button>
-</form>
+<a href="/cd-form/new">Add a new CD</a>

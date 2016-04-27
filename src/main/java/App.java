@@ -12,11 +12,22 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("cd-names", request.session().attribute("list"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("cd-form/new", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/cd-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/albums", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("cd-names", CD.all());
+      model.put("template", "templates/allcds.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     post("/albums", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();

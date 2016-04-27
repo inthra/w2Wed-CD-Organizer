@@ -1,0 +1,9 @@
+<h1> All CDs </h1>
+
+<ul>
+  #foreach($cd in $cd-names)
+  <li><a href="/albums/$cd.getId()">$cd-names.getName()</a></li>
+  #end
+</ul>
+
+<a href="/cd-form/new">Add a new CD</a>

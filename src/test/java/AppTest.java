@@ -25,28 +25,29 @@ public class AppTest extends FluentTest {
   @Test
   public void CDIsCreatedTest() {
     goTo("http://localhost:4567/");
+    click("a", withText("Add a new CD"));
     fill("#cd-name").with("Songs of Innocence");
     submit(".btn");
     assertThat(pageSource()).contains("Your CD has been saved.");
    }
    @Test
    public void newCDIsDisplayedTest() {
-     goTo("http://localhost:4567/");
+     goTo("http://localhost:4567/cd-form/new");
      fill("#cd-name").with("Songs of Innocence");
      submit(".btn");
-     click("a", withText("Go Back"));
+     click("a", withText("View CDs"));
      assertThat(pageSource()).contains("Songs of Innocence");
     }
 
   @Test
    public void multipleCDsAreDisplayedTest() {
-     goTo("http://localhost:4567/");
+     goTo("http://localhost:4567/cd-form/new");
      fill("#cd-name").with("Songs of Innocence");
      submit(".btn");
-     click("a", withText("Go Back"));
+     goTo("http://localhost:4567/cd-form/new");
      fill("#cd-name").with("No Line on the Horizon");
      submit(".btn");
-     click("a", withText("Go Back"));
+     click("a", withText("View CDs"));
      assertThat(pageSource()).contains("Songs of Innocence");
      assertThat(pageSource()).contains("No Line on the Horizon");
    }
