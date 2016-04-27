@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CDTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-04-27T21:41:20" hostname="epicodus-36.local" time="0.0">
+<testsuite name="CDTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-04-27T23:00:39" hostname="epicodus-36.local" time="0.004">
   <properties/>
   <testcase name="newCD_instantiatesCorrectly_true" classname="CDTest" time="0.0"/>
-  <testcase name="newCD_instantiatesWithName_String" classname="CDTest" time="0.0"/>
+  <testcase name="getId_tasksInstantiateWithAnID_1" classname="CDTest" time="0.0"/>
+  <testcase name="find_returnsNullWhenNo_CD_Found_null" classname="CDTest" time="0.0"/>
+  <testcase name="getCreatedAt_instantiatesWithCurrentTime_today" classname="CDTest" time="0.0"/>
+  <testcase name="all_returnsAllInstancesOf_CD_true" classname="CDTest" time="0.0"/>
+  <testcase name="find_returnsCD_WithSameId_secondCD" classname="CDTest" time="0.0"/>
+  <testcase name="newCD_instantiatesWithName_String" classname="CDTest" time="0.001"/>
+  <testcase name="clear_emptiesAllTasksFromArrayList_0" classname="CDTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
