@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.fluentlenium.core.filter.FilterConstructor.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -28,6 +29,26 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Your CD has been saved.");
    }
+   @Test
+   public void newCDIsDisplayedTest() {
+     goTo("http://localhost:4567/");
+     fill("#cd-name").with("Songs of Innocence");
+     submit(".btn");
+     click("a", withText("Go Back"));
+     assertThat(pageSource()).contains("Songs of Innocence");
+    }
 
+  @Test
+   public void multipleCDsAreDisplayedTest() {
+     goTo("http://localhost:4567/");
+     fill("#cd-name").with("Songs of Innocence");
+     submit(".btn");
+     click("a", withText("Go Back"));
+     fill("#cd-name").with("No Line on the Horizon");
+     submit(".btn");
+     click("a", withText("Go Back"));
+     assertThat(pageSource()).contains("Songs of Innocence");
+     assertThat(pageSource()).contains("No Line on the Horizon");
+   }
 
 }

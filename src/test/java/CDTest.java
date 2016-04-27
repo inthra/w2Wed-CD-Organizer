@@ -15,6 +15,4 @@ public class CDTest {
     assertEquals("Songs of Innocence", myCD.getName());
   }
   
-
-
 }

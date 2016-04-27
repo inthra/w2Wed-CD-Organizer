@@ -1,5 +1,15 @@
 <h1>CD list!</h1>
 
+#if ($cd-names)
+  <ul>
+    #foreach($cd in $cd-names)
+    <li>$cd.getName()</li>
+    #end
+  </ul>
+#else
+  <p>No CDs!</p>
+#end
+
 <p>Add a new CD:</p>
 
 <form action="/albums" method="post">
