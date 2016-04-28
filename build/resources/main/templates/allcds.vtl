@@ -1,8 +1,8 @@
 <h1> All CDs </h1>
 
 <ul>
-  #foreach($cd in $cd-names)
-  <li><a href="/albums/$cd.getId()">$cd-names.getName()</a></li>
+  #foreach($cd in $allCDs)
+  <li><a href="/eachCD/$cd.getId()">$cd.getName()</a></li>
   #end
 </ul>
 

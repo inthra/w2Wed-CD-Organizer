@@ -1,8 +1,8 @@
-#if ($cd-names)
-  <h1>$cd-names.getName()</h1>
+#if ($cd)
+  <h1>$cd.getName()</h1>
 #else
   <h1> CD not found </h1>
 #end
 
 <a href="/cd-form/new">Add another CD</a>
-<a href="/allcds">View CDs</a>
+<a href="/cdList">View CDs</a>
