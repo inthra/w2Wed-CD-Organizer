@@ -54,4 +54,10 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("No Line on the Horizon");
   }
 
+  @Test
+  public void CD_NotFoundMessageShown() {
+    goTo("http://localhost:4567/eachCD/999");
+    assertThat(pageSource()).contains("CD not found");
+  }
+
 }
